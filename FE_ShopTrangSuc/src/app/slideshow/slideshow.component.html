@@ -1,0 +1,12 @@
+<div class="slideshow">
+    <div class="slide" *ngFor="let image of images; let i = index" [ngClass]="{'active': i === currentIndex}">
+      <img class="" [src]="image" alt="Slide">
+
+    </div>
+
+  </div>
+ <div class="flex justify-between mx-4">
+    <button class="font-bold text-3xl  " (click)="prevSlide()"></button>
+    <button class="font-bold text-3xl -mt-[50px]" (click)="nextSlide()">➤</button>
+
+ </div>

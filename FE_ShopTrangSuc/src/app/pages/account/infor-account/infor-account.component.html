@@ -1,0 +1,104 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<div class="container-xl px-4 mt-24">
+    <p style="text-align: center;font-size:40px;padding:15px">Thông Tin Tài Khoản Cá Nhân</p>
+   
+    <!-- Account page navigation-->
+    <nav class="nav nav-borders">
+        <a class="nav-link" a href="/infor-account"  target="__blank">Hồ Sơ</a>
+        <a class="nav-link"  target="__blank">Đơn Hàng Của Bạn</a>
+       
+    </nav>
+    <hr class="mt-0 mb-4">
+    <div class="row">
+        <div class="col-xl-4">
+            <!-- Profile picture card-->
+            <div class="card mb-4 mb-xl-0">
+                <div class="card-header">Ảnh Đại Diện</div>
+                <div class="card-body text-center">
+                    <!-- Profile picture image-->
+                    <img class="img-account-profile rounded-circle mb-2"style="margin-left:107px" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                    <!-- Profile picture help block-->
+                    <div class="small font-bold mb-4">Họ Và Tên:{{user.firstname}} {{user.lastname}} </div>
+                   
+                    <button (click)="signOut()" class="btn btn-danger"style="margin-right:14px">Đăng xuất</button>
+
+                        
+                   
+                    
+                    <!-- Profile picture upload button-->
+                    <button class="btn btn-primary" type="button"routerLink="/update-account">Cập Nhật Tài Khoản</button>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-8 ">
+            <!-- Account details card-->
+            <div class="card mb-4" style="width:800px">
+                <div class="card-header">Chi Tiết Tài Khoản</div>
+                <div class="card-body">
+                    <form >
+                        <!-- Form Group (username)-->
+                        <div class="row gx-3 mb-3">
+                            <div class="col-md-6">
+                            <label class="small mb-1" for="inputUsername">Họ Và Tên:</label>
+                            <input class="form-control" id="inputUsername" readonly type="text" placeholder="Mời Nhập Họ Tên" value="{{user.firstname}}" name="firstname">
+                            <i class="fas fa-user icon"id="iconUser"></i>
+                        </div>
+                            
+                        </div>
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                             <!-- Form Group (phone number)-->
+                             <div class="col-md-6">
+                                <label class="small mb-1" for="inputPhone">Số Điện Thoại</label>
+                                <input class="form-control" readonly id="mobile" type="text" placeholder="Mời Nhập Số Điện Thoại" value="{{user.mobile}}">
+                                <i class="fas fa-mobile icon"id="iconPhone"></i>
+
+                            </div>
+                            
+                        </div>
+                        <!-- Form Row        -->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (organization name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLocation">Địa Chỉ</label>
+                               
+                                <input class="form-control" id="address" readonly type="text" placeholder="Mời Nhập Địa Chỉ"formControlName="address"value="{{user.address}}" >
+                                <i class="fas fa-home icon"id="iconHome"style="font-size:13px;padding-top:3.3px"></i>
+                                
+                              
+
+                            </div>
+                            <!-- Form Group (location)-->
+                          
+                        </div>
+                        <!-- Form Group (email address)-->
+                        
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                           
+                            <!-- Form Group (birthday)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputEmail">Email</label>
+                                <input class="form-control" id="inputEmail" readonly type="text" name="email" placeholder="Mời Nhập Email" value="{{user.email}}">
+                                <i class="fas fa-envelope icon"id="iconEmail"style="padding-left:1px;margin-top:2px"></i>
+                            </div>
+                        </div>
+                        <!-- Save changes button-->
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $( function() {
+      $( "#datepicker" ).datepicker({
+        showOtherMonths: true,
+        selectOtherMonths: true
+      });
+    } );
+    </script>

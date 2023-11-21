@@ -1,0 +1,35 @@
+<ul >
+  <li *ngFor="let item of cartItems.products">
+    <div *ngIf="item.images">
+      <img src={{item.images[1]}} [alt]="item.product.name">
+    </div>
+    <div>
+      <a routerLink="/product/{{cartItems.id}}">
+        {{item.product.title}}
+      </a>
+    </div>
+    <div>
+      <input #quantitySelect
+      [value]="item.quantity"
+      (change)="changeQuantity(cart.cartItems, item.newQuantity)">
+
+    </div>
+    <div>
+      {{item.size}}
+    </div>
+
+    <div>
+      <button class="remove-button" (click)="removeFromCart(item)">
+        Remove
+      </button>
+    </div>
+  </li>
+</ul>
+<div class="checkout">
+  <div>
+    <div class="products-count">Tổng Tiền: {{getTotalPrice()}} VNĐ</div>
+
+  </div>
+
+  <a routerLink="/checkout">Proceed to Checkout</a>
+</div>

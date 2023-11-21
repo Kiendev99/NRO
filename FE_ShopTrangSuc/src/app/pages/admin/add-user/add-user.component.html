@@ -1,0 +1,169 @@
+<!-- component -->
+<div class="flex items-center justify-center p-12 ml-[200px] bg-gradient-to-r from-cyan-300 to-blue-500 py-24 pb-[1000px]">
+    <div class="mx-auto w-full max-w-[550px]">
+      <h2 class="font-bold text-center my-10 text-2xl">Thêm tài khoản</h2>
+      <form [formGroup]="userForm" (ngSubmit)="onsubmit()">
+        <div class="mb-5">
+          <label
+            class="mb-3 block text-base font-medium text-[#07074D]"
+          >
+          firstname
+          </label>
+          <input
+          [(ngModel)]="users.firstname"
+          formControlName="firstname"
+            type="text"
+            name="firstname"
+            id="firstname"
+            placeholder="nhập firstname"
+            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          />
+          <p class="text-red-500"
+          *ngIf="
+          userForm.get('firstname')?.hasError('required')&&
+          (userForm.get('firstname')?.touched || userForm.get('firstname')?.dirty)
+          "
+          >
+          Vui lòng nhập tên firstname
+          </p>
+          <p class="text-red-500"
+          *ngIf="
+          userForm.get('firstname')?.hasError('minlength')&&
+          (userForm.get('firstname')?.touched || userForm.get('firstname')?.dirty)
+          "
+          >
+          vui lòng nhập firstname trên 6 ký tự
+          </p>
+        </div>
+        <div class="mb-5">
+          <label
+            class="mb-3 block text-base font-medium text-[#07074D]"
+          >
+          lastname
+          </label>
+          <input
+          [(ngModel)]="users.lastname"
+          formControlName="lastname"
+            type="text"
+            name="lastname"
+            id="lastname"
+            placeholder="nhập lastname"
+            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          />
+          <p class="text-red-500"
+          *ngIf="
+          userForm.get('lastname')?.hasError('required')&&
+          (userForm.get('lastname')?.touched || userForm.get('lastname')?.dirty)
+          "
+          >
+          Vui lòng nhập tên lastname
+          </p>
+          <p class="text-red-500"
+          *ngIf="
+          userForm.get('lastname')?.hasError('minlength')&&
+          (userForm.get('lastname')?.touched || userForm.get('lastname')?.dirty)
+          "
+          >
+          vui lòng nhập lastname trên 6 ký tự
+          </p>
+        </div>
+        <div class="mb-5">
+          <label
+            class="mb-3 block text-base font-medium text-[#07074D]"
+          >
+          email
+          </label>
+          <input
+          [(ngModel)]="users.email"
+          formControlName="email"
+            type="text"
+            name="email"
+            id="email"
+            placeholder="nhập email"
+            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          />
+          <p class="text-red-500"
+          *ngIf="
+          userForm.get('email')?.hasError('required')&&
+          (userForm.get('email')?.touched || userForm.get('email')?.dirty)
+          "
+          >
+          Vui lòng nhập tên email
+          </p>
+         
+        </div>
+        <div class="mb-5">
+          <label
+            class="mb-3 block text-base font-medium text-[#07074D]"
+          >
+          mobile
+          </label>
+          <input
+          [(ngModel)]="users.mobile"
+          formControlName="mobile"
+            type="text"
+            name="mobile"
+            id="mobile"
+            placeholder="nhập mobile"
+            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          />
+          <p class="text-red-500"
+          *ngIf="
+          userForm.get('mobile')?.hasError('required')&&
+          (userForm.get('mobile')?.touched || userForm.get('mobile')?.dirty)
+          "
+          >
+          Vui lòng nhập tên mobile
+          </p>
+          <p class="text-red-500"
+          *ngIf="
+          userForm.get('mobile')?.hasError('minlength')&&
+          (userForm.get('mobile')?.touched || userForm.get('mobile')?.dirty)
+          "
+          >
+          vui lòng nhập mobile trên 6 ký tự
+          </p>
+        </div>
+        <div class="mb-5">
+          <label
+            class="mb-3 block text-base font-medium text-[#07074D]"
+          >
+          password
+          </label>
+          <input
+          [(ngModel)]="users.password"
+          formControlName="password"
+            type="text"
+            name="password"
+            id="password"
+            placeholder="nhập password"
+            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          />
+          <p class="text-red-500"
+          *ngIf="
+          userForm.get('password')?.hasError('required')&&
+          (userForm.get('password')?.touched || userForm.get('password')?.dirty)
+          "
+          >
+          Vui lòng nhập tên password
+          </p>
+          <p class="text-red-500"
+          *ngIf="
+          userForm.get('password')?.hasError('minlength')&&
+          (userForm.get('password')?.touched || userForm.get('password')?.dirty)
+          "
+          >
+          vui lòng nhập password trên 6 ký tự
+          </p>
+        </div>
+        <div>
+          <button
+          type="submit"
+            class="hover:shadow-form hover:bg-blue-800 rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none mt-5"
+          >
+            Thêm
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>

@@ -1,0 +1,163 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<div class="container-xl px-4 mt-24">
+    <!-- Account page navigation-->
+    <p style="text-align: center;font-size:40px;padding:15px">Cập Nhật Thông Tin Tài Khoản</p>
+
+    <nav class="nav nav-borders ">
+        <a class="nav-link "href="/infor-account">Hồ Sơ</a>
+        <a class="nav-link " href="/update-account">Đơn Hàng</a>
+      
+    </nav>
+    <hr class="mt-0 mb-4">
+    <div class="row">
+        <div class="col-xl-4">
+            <!-- Profile picture card-->
+            <div class="card mb-4 mb-xl-0">
+                <div class="card-header">Ảnh Đại Diện</div>
+                <div class="card-body text-center">
+                    <!-- Profile picture image-->
+                    <img class="img-account-profile rounded-circle mb-2"style="margin-left:107px" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                    <!-- Profile picture help block-->
+                    <div class="small font-bold mb-4">Họ Và Tên: {{user?.firstname}} {{user?.lastname}} </div>
+                        
+                   
+                    
+                    <!-- Profile picture upload button-->
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-8 ">
+            <!-- Account details card-->
+            <div class="card mb-4" style="width:800px">
+                <div class="card-header">Chi Tiết Tài Khoản</div>
+                <div class="card-body">
+                    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                        <!-- Form Group (username)-->
+                        <div class="col gx-3 mb-3">
+                            <div class="col-md-6">
+                            <label class="small mb-1" for="inputUsername">First Name</label>
+                            <input class="form-control" id="inputUsername" name="firstname" formControlName="firstname"  type="text" placeholder="Mời Bạn Nhập Tên " >
+                            
+                            <i class="fas fa-user icon"id="iconUser"style=""></i>
+                            <div *ngIf="
+                            userForm.get('firstname')?.hasError('required') &&
+                           (userForm.get('firstname')?.touched || userForm.get('firstname')?.dirty)" class="text-red-600 ">
+                           FirstName không được để trống!</div>
+                            </div>
+                            <div class="col-md-6">
+                            <label class="small mb-1" for="inputUsername">Last Name</label>
+                            <input class="form-control" id="inputUsername" name="lastname" formControlName="lastname" type="text" placeholder="Mời Bạn Nhập Tên " >
+                            <i class="fas fa-user icon"id="iconUser"></i>
+                            <div *ngIf="
+                            userForm.get('lastname')?.hasError('required') &&
+                           (userForm.get('lastname')?.touched || userForm.get('lastname')?.dirty)" class="text-red-600 ">
+                           LastName không được để trống!</div>
+                            
+                            </div>
+                    
+                            
+                        </div>
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                             <!-- Form Group (phone number)-->
+                             <div class="col-md-6">
+                                <label class="small mb-1" for="inputPhone">Số Điện Thoại</label>
+                                <input class="form-control" min="0" id="inputPhone" name="mobile" formControlName="mobile" type="text" placeholder="Mời Bạn Nhập Số Điện Thoại" >
+                                <i class="fas fa-mobile icon"id="iconPhone"></i>
+                                <div *ngIf="
+                    userForm.get('mobile')?.hasError('required') &&
+                    (userForm.get('mobile')?.touched || userForm.get('mobile')?.dirty)" class="text-red-600">
+                    Số điện thoại không được để trống!</div>
+                <div *ngIf="
+                    userForm.get('mobile')?.hasError('pattern') &&
+                    (userForm.get('mobile')?.touched || userForm.get('mobile')?.dirty)" class="text-red-600">
+                    Số điện thoại không đúng định dạng</div>
+
+                            </div>
+                            
+                        </div>
+                        <!-- Form Row        -->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (organization name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLocation">Địa Chỉ</label>
+                               
+                                <input class="form-control" id="inputLocation" name="address" formControlName="address"  type="text" placeholder="Mời Bạn Nhập Địa Chỉ " >
+                                <i class="fas fa-home icon"id="iconHome"style="font-size:13px;padding-top:3.3px"></i>
+                                <div *ngIf="
+                                userForm.get('address')?.hasError('required') &&
+                               (userForm.get('address')?.touched || userForm.get('address')?.dirty)" class="text-red-600 ">
+                               Địa Chỉ không được để trống!</div>
+                              
+
+                            </div>
+                            <!-- Form Group (location)-->
+                          
+                        </div>
+                        <!-- Form Group (email address)-->
+                        
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                           
+                            <!-- Form Group (birthday)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputEmail">Email</label>
+                                <input class="form-control" id="inputEmail" name="email" formControlName="email"  type="text" name="email" placeholder="Mời Bạn Nhập Email" >
+                                <i class="fas fa-envelope icon"id="iconEmail"style="padding-left:1px;margin-top:2px"></i>
+                                <div *ngIf="
+                                userForm.get('email')?.hasError('required') &&
+                               (userForm.get('email')?.touched || userForm.get('email')?.dirty)" class="text-red-600 ">
+                               Email không được để trống!</div>
+                               <div *ngIf="
+                    userForm.get('email')?.hasError('pattern') &&
+                    (userForm.get('email')?.touched || userForm.get('email')?.dirty)" class="text-red-600">
+                    Email không đúng định dạng</div>
+                            </div>
+                        </div>
+                        <!-- Save changes button-->
+                        <hr class="my-4" />
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <!-- <div class="form-group">
+                                    <label for="inputPassword4">Mật Khẩu Cũ</label>
+                                    <input type="password" name="oldpassword" formControlName="oldpassword" class="form-control" id="inputpassword" />
+                                </div> -->
+                                <div class="form-group">
+                                    <label for="inputPassword5">Mật Khẩu Mới</label>
+                                    <input type="password" name="newPassword" formControlName="newPassword" class="form-control" id="inputpassword" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword6">Xác Minh Mật Khẩu Mới</label>
+                                    <input type="confirmPassword"  class="form-control" id="inputpassword" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- <p class="mb-2">Password requirements</p>
+                                <p class="small text-muted mb-2">To create a new password, you have to meet all of the following requirements:</p>
+                                <ul class="small text-muted pl-4 mb-0">
+                                    <li>Minimum 8 character</li>
+                                    <li>At least one special character</li>
+                                    <li>At least one number</li>
+                                    <li>Can’t be the same as a previous password</li>
+                                </ul> -->
+                            </div>
+                        </div>
+                        <button type="submit"  class="btn btn-primary">Save Change</button>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $( function() {
+      $( "#datepicker" ).datepicker({
+        showOtherMonths: true,
+        selectOtherMonths: true
+      });
+    } );
+    </script>

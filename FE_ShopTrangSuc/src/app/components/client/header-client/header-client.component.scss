@@ -1,0 +1,96 @@
+// .nro-text {
+//   font-size: 3em;
+//   font-weight: bold;
+//   font-family: 'Arial', sans-serif;
+//   display: inline-block;
+//   background-image: linear-gradient(to right, #FF5E5B, #D74257, #BB2D3B, #FFFFFF, #BB2D3B, #D74257, #FF5E5B);
+//   -webkit-background-clip: text;
+//   color: transparent;
+// }
+.nro-text {
+  font-size: 3em;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  color: #FFD700; /* Màu vàng */
+  text-transform: uppercase; /* Chuyển đổi về chữ in hoa */
+  letter-spacing: 8px; /* Khoảng cách giữa các ký tự */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Đổ bóng chữ */
+  display: inline-block;
+  transition: transform 0.3s ease-in-out; /* Hiệu ứng chuyển động */
+}
+
+.nro-text:hover {
+  transform: translateY(-5px); /* Nhảy lên khi hover */
+}
+// .submenu{
+//     display: flex;
+//     column-gap: 1rem;
+// }
+// .submenu li{
+//    position: relative;
+// }
+// .submenu a{
+//     font-size: 20px;
+//     font-family: "Quicksand", sans-serif;
+//     font-weight: 400;
+//     font-style: normal;
+//     font-size: 14px;
+//     line-height: 1.6em;
+//     color: #000;
+// }
+// .submenu a::after{
+//    content: "";
+//    width: 0;
+//    height: 2px;
+//    background: red;
+//    position: absolute;
+//    bottom: -4px;
+//    left: 0;
+//    transition: 0.4s all linear;
+// }
+// .submenu a:hover::after,
+// .submenu .home-active::after
+// {
+//     width: 100%;
+// }
+// hi
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav li {
+    display: inline-block;
+    position: relative;
+  }
+  
+  nav a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+    background-color: #ffffff;
+  }
+  nav a:hover {
+    text-decoration: underline;
+    color: red;
+  }
+  
+  nav li:hover > .submenu {
+    display: block;
+  }
+  
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 10px;
+  }
+  
+  .submenu li {
+    display: block;
+    position: relative;
+  }
+  //hi

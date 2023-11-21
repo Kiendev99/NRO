@@ -1,0 +1,136 @@
+<!-- component -->
+<div class="flex items-center justify-center p-12 ml-[200px] bg-gradient-to-r from-cyan-300 to-blue-500 pb-[500px]">
+    <div class="mx-auto w-full max-w-[550px]">
+      <h2 class="font-bold text-center my-10 text-2xl">Form Update</h2>
+      <form [formGroup]="userForm" (ngSubmit)="onHandleSubmit()">
+       
+        <div class="mb-5">
+          <label
+            class="mb-3 block text-base font-medium text-[#07074D]"
+          >
+          firstname
+          </label>
+          <input
+          formControlName="firstname"
+            type="text"
+            name="firstname"
+            id="firstname"
+            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          />
+          <p class="text-red-500"
+            *ngIf="
+            userForm.get('firstname')?.hasError('required')&&
+            (userForm.get('firstname')?.touched || userForm.get('firstname')?.dirty)
+            "
+            >
+            vui long nhap firstname
+            </p>
+        </div>
+
+        <div class="mb-5">
+            <label
+              class="mb-3 block text-base font-medium text-[#07074D]"
+            >
+            lastname
+            </label>
+            <input
+            formControlName="lastname"
+              type="text"
+              name="lastname"
+              id="lastname"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+            <p class="text-red-500"
+              *ngIf="
+              userForm.get('lastname')?.hasError('required')&&
+              (userForm.get('lastname')?.touched || userForm.get('lastname')?.dirty)
+              "
+              >
+              vui long nhap lastname
+              </p>
+        </div>
+
+        <div class="mb-5">
+            <label
+              class="mb-3 block text-base font-medium text-[#07074D]"
+            >
+            email
+            </label>
+            <input
+            formControlName="email"
+              type="text"
+              name="email"
+              id="email"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+            <p class="text-red-500"
+              *ngIf="
+              userForm.get('email')?.hasError('required')&&
+              (userForm.get('email')?.touched || userForm.get('email')?.dirty)
+              "
+              >
+              vui long nhap email
+              </p>
+        </div>
+
+        <div class="mb-5">
+            <label
+              class="mb-3 block text-base font-medium text-[#07074D]"
+            >
+            mobile
+            </label>
+            <input
+            formControlName="mobile"
+              type="text"
+              name="mobile"
+              id="mobile"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+            <p class="text-red-500"
+              *ngIf="
+              userForm.get('mobile')?.hasError('required')&&
+              (userForm.get('mobile')?.touched || userForm.get('mobile')?.dirty)
+              "
+              >
+              vui long nhap mobile
+              </p>
+        </div>
+
+        <div class="mb-5">
+            <label
+              class="mb-3 block text-base font-medium text-[#07074D]"
+            >
+            password
+            </label>
+            <input
+            formControlName="password"
+              type="text"
+              name="password"
+              id="password"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+            <p class="text-red-500"
+              *ngIf="
+              userForm.get('password')?.hasError('required')&&
+              (userForm.get('password')?.touched || userForm.get('password')?.dirty)
+              "
+              >
+              vui long nhap password
+              </p>
+        </div>
+
+
+        
+  
+        <div>
+          <button
+          type="submit"
+          
+            class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none mt-5"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>

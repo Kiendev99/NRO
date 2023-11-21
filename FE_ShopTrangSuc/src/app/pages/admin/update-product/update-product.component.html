@@ -1,0 +1,497 @@
+<!-- component
+<div class="flex items-center justify-center p-12 ml-[200px] bg-gradient-to-r from-cyan-300 to-blue-500">
+  <div class="mx-auto w-full max-w-[550px]">
+    <h2 class="font-bold text-center my-10 text-2xl">Form Update</h2>
+    <form [formGroup]="productForm" (ngSubmit)="onHandleSubmit()">
+      <div class="mb-5">
+        <label
+          class="mb-3 block text-base font-medium text-[#07074D]"
+        >
+        title
+        </label>
+        <input
+        formControlName="title"
+          type="text"
+          name="title"
+          id="title"
+          class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+        />
+        <p class="text-red-500"
+          *ngIf="
+          productForm.get('title')?.hasError('required')&&
+          (productForm.get('title')?.touched || productForm.get('title')?.dirty)
+          "
+          >
+          vui long nhap title
+          </p>
+      </div>
+      <div class="mb-5">
+        <label
+          class="mb-3 block text-base font-medium text-[#07074D]"
+        >
+        brand
+        </label>
+        <input
+        formControlName="brand"
+          type="text"
+          name="brand"
+          id="brand"
+          class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+        />
+        <p class="text-red-500"
+          *ngIf="
+          productForm.get('brand')?.hasError('required')&&
+          (productForm.get('brand')?.touched || productForm.get('brand')?.dirty)
+          "
+          >
+          vui long nhap brand
+          </p>
+      </div>
+     
+      <div class="mb-5">
+        <label
+          class="mb-3 block text-base font-medium text-[#07074D]"
+        >
+          price
+        </label>
+        <input
+        formControlName="price"
+          type="number"
+          name="price"
+          id="price"
+          class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+        />
+        <p class="text-red-500"
+          *ngIf="
+          productForm.get('price')?.hasError('required')&&
+          (productForm.get('price')?.touched || productForm.get('price')?.dirty)
+          "
+          >
+          vui long nhap price
+          </p>
+      </div>
+      <div class="mb-5">
+        <label
+          class="mb-3 block text-base font-medium text-[#07074D]"
+        >
+          image
+        </label>
+        <input
+        formControlName="images"
+          type="text"
+          name="images"
+          id="images"
+          class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+        />
+        <p class="text-red-500"
+          *ngIf="
+          productForm.get('images')?.hasError('required')&&
+          (productForm.get('images')?.touched || productForm.get('images')?.dirty)
+          "
+          >
+          vui long nhap images
+          </p>
+      </div>
+      <div class="mb-5">
+        <label
+          class="mb-3 block text-base font-medium text-[#07074D]"
+        >
+          description
+        </label>
+        <input
+        formControlName="description"
+          type="text"
+          name="description"
+          id="description"
+          class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+        />
+        <p class="text-red-500"
+        *ngIf="
+        productForm.get('description')?.hasError('required')&&
+        (productForm.get('description')?.touched || productForm.get('description')?.dirty)
+        "
+        >
+        vui long nhap description
+        </p>
+      </div>
+      <div class="mb-5">
+        <label
+          class="mb-3 block text-base font-medium text-[#07074D]"
+        >
+          Slug
+        </label>
+        <input
+        formControlName="slug"
+          type="text"
+          name="slug"
+          id="slug"
+          class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+        />
+        <p class="text-red-500"
+        *ngIf="
+        productForm.get('slug')?.hasError('required')&&
+        (productForm.get('slug')?.touched || productForm.get('slug')?.dirty)
+        "
+        >
+        vui long nhap slug
+        </p>
+      </div>
+      
+
+      <div className="mb-5">
+      <label
+          class="mb-3 block text-base font-medium text-[#07074D]"
+        >
+          origin
+        </label>
+            <select
+              class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+             
+            >
+              <option value="">Chọn xuất xứ</option>
+              <option value="Vietnam">Ninh Binh</option>
+              <option value="Thailand">Ha Noi</option>
+              <option value="Taiwan">Nam Dinh</option>
+            </select>
+            
+          </div>
+      
+      <div>
+        <button
+        type="submit"
+        
+          class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none mt-5"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div> -->
+
+
+<div class="bg-white relative">
+  
+  <div class="flex flex-col items-center justify-between pt-0 pr-10 pb-0 pl-10 mt-0 mr-auto mb-0 ml-auto max-w-7xl
+      xl:px-5 lg:flex-row">
+    <div class="flex flex-col items-center w-full pt-5 pr-10 pb-20 pl-10 lg:pt-20 lg:flex-row">
+      <div class="w-full bg-cover relative max-w-md lg:max-w-2xl lg:w-7/12">
+        <button >
+          <a href="/admin/list">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-skip-backward-circle-fill" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.79-2.907L8.5 7.028V5.5a.5.5 0 0 0-.79-.407L5 7.028V5.5a.5.5 0 0 0-1 0v5a.5.5 0 0 0 1 0V8.972l2.71 1.935a.5.5 0 0 0 .79-.407V8.972l2.71 1.935A.5.5 0 0 0 12 10.5v-5a.5.5 0 0 0-.79-.407z"/>
+            </svg>
+          </a>
+        </button>
+        <div class="flex flex-col items-center justify-center w-full h-full relative lg:pr-10">
+          <img src="https://res.cloudinary.com/macxenon/image/upload/v1631570592/Run_-_Health_qcghbu.png" class="btn-"/>
+        </div>
+      </div>
+      <div class="w-full mt-20 mr-0 mb-0 ml-0 relative z-10 max-w-2xl lg:mt-0 lg:w-5/12">
+        <div class="flex flex-col items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl
+            relative z-10">
+        <form [formGroup]="productForm" (ngSubmit)="onHandleSubmit()">
+          <!-- <p class="w-full text-4xl font-medium text-center leading-snug font-serif">Sign up for an account</p> -->
+          
+            <div class="w-full mt-6 mr-0 mb-0 ml-0 relative space-y-3">
+              <div class="relative -mt-5">
+                <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-12 mr-0 mb-0 ml-2 font-medium text-gray-600
+                    ">Tên sản phẩm</p>
+                <input  
+                formControlName="title"
+                  type="text"
+                  name="title"
+                  id="title" placeholder="title" class="border placeholder-gray-400 focus:outline-none
+                    focus:border-black w-full pt-3 pr-4 pb-3 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
+                    border-gray-300 rounded-md"/>
+                    <p class="text-red-500"
+            *ngIf="
+            productForm.get('title')?.hasError('required')&&
+            (productForm.get('title')?.touched || productForm.get('title')?.dirty)
+            "
+            >
+           Vui lòng nhập tên sản phẩm
+            </p>
+            <p class="text-red-500"
+            *ngIf="
+            productForm.get('title')?.hasError('minlength')&&
+            (productForm.get('title')?.touched || productForm.get('title')?.dirty)
+            "
+            >
+            Vui lòng nhập tên sản phẩm trên 6 ký tự
+            </p>
+              </div>
+              
+             <div class="flex space-x-3 ">
+              <div class="relative  ">
+                <p class="bg-white  pr-2 pl-2 -mb-3 -mb-10 ml-2 font-medium text-gray-600
+                    ">Giá gốc</p>
+                <input 
+                formControlName="priceroot"
+                  type="number"
+                  name="priceroot"
+                  id="priceroot" placeholder="priceroot" class="border placeholder-gray-400 focus:outline-none
+                    focus:border-black w-full pt-3 pr-4 pb-3 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
+                    border-gray-300 rounded-md"/>
+                    <p class="text-red-500"
+            *ngIf="
+            productForm.get('priceroot')?.hasError('required')&&
+            (productForm.get('priceroot')?.touched || productForm.get('priceroot')?.dirty)
+            "
+            >
+           Vui lòng nhập priceroot sản phẩm
+            </p>
+            <p class="text-red-500"
+            *ngIf="
+            productForm.get('priceroot')?.hasError('minlength')&&
+            (productForm.get('priceroot')?.touched || productForm.get('priceroot')?.dirty)
+            "
+            >
+            Vui lòng nhập priceroot sản phẩm trên 6 ký tự
+            </p>
+              </div>
+              <div class="relative ">
+                <p class="bg-white  pr-2 pl-2 -mb-3 -mb-10 ml-2 font-medium text-gray-600
+                    ">Giá</p>
+                <input  
+                formControlName="price"
+                  type="number"
+                  name="price"
+                  id="price" placeholder="price" class="border placeholder-gray-400 focus:outline-none
+                    focus:border-black w-full pt-3 pr-4 pb-3 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
+                    border-gray-300 rounded-md"/>
+                    <p class="text-red-500"
+            *ngIf="
+            productForm.get('price')?.hasError('required')&&
+            (productForm.get('price')?.touched || productForm.get('price')?.dirty)
+            "
+            >
+           Vui lòng nhập price sản phẩm
+            </p>
+            <p class="text-red-500"
+            *ngIf="
+            productForm.get('price')?.hasError('minlength')&&
+            (productForm.get('price')?.touched || productForm.get('price')?.dirty)
+            "
+            >
+            Vui lòng nhập price sản phẩm trên 6 ký tự
+            </p>
+              </div>
+             </div>
+             <div class="relative">
+              <p class="bg-white  pr-2 pl-2 -mb-3 -mb-10 ml-2 font-medium text-gray-600
+                  ">Ảnh</p>
+                  <input
+                  type="file" multiple="multiple" accept="image/*"
+                 
+                  formControlName="images"
+                    name="images"
+                    id="images"
+                    placeholder="Nhập ảnh"
+                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                  />
+                  <p class="text-red-500"
+          *ngIf="
+          productForm.get('images')?.hasError('required')&&
+          (productForm.get('images')?.touched || productForm.get('images')?.dirty)
+          "
+          >
+         Vui lòng nhập images sản phẩm
+          </p>
+          <p class="text-red-500"
+          *ngIf="
+          productForm.get('images')?.hasError('minlength')&&
+          (productForm.get('images')?.touched || productForm.get('images')?.dirty)
+          "
+          >
+          Vui lòng nhập images sản phẩm trên 6 ký tự
+          </p>
+            </div>
+              <!-- <div class="relative">
+                <p class="bg-white  pr-2 pl-2 -mb-3 -mb-10 ml-2 font-medium text-gray-600
+                    ">Thương hiệu</p>
+                <input 
+                formControlName="brand"
+                  type="text"
+                  name="brand"
+                  id="brand" placeholder="brand" class="border placeholder-gray-400 focus:outline-none
+                    focus:border-black w-full pt-3 pr-4 pb-3 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
+                    border-gray-300 rounded-md"/>
+                    <p class="text-red-500"
+            *ngIf="
+            productForm.get('brand')?.hasError('required')&&
+            (productForm.get('brand')?.touched || productForm.get('brand')?.dirty)
+            "
+            >
+           Vui lòng nhập brand sản phẩm
+            </p>
+            <p class="text-red-500"
+            *ngIf="
+            productForm.get('brand')?.hasError('minlength')&&
+            (productForm.get('brand')?.touched || productForm.get('brand')?.dirty)
+            "
+            >
+            Vui lòng nhập brand sản phẩm trên 6 ký tự
+            </p>
+              </div> -->
+              <div class="mg-b-5">
+                <p class="bg-white  pr-2 pl-2 -mb-3 -mb-10 ml-2 font-medium text-gray-600
+                ">Thương hiệu</p>
+                <div class="flex justify-between items-center border placeholder-gray-400 focus:outline-none
+                focus:border-black w-full pt-3 pr-4 pb-3 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
+                border-gray-300 rounded-md">
+                  <div class="items-center flex space-x-3">
+                    <input
+                      type="radio"
+                      name="brand"
+                      id="brand"
+                      [value]="'TTL'"
+                      
+                      formControlName="brand"
+                    />
+                    <label for="brand">TTL</label>
+                  </div>
+                  <div class="items-center flex space-x-3">
+                    <input
+                      type="radio"
+                      name="brand"
+                      id="brand"
+                      [value]="'PNJ'"
+                      formControlName="brand"
+                    />
+                    <label for="brand">PNJ</label>
+                  </div>
+                  <div class="items-center flex space-x-3">
+                    <input
+                      type="radio"
+                      [value]="'NRO'"
+                      id="brand"
+                      name="brand"
+                      
+                      formControlName="brand"
+                    />
+                    <label for="brand">NRO </label>
+                  </div>
+                </div>
+              </div>
+              <div class="relative">
+                <p class="bg-white  pr-2 pl-2 -mb-3 -mb-10 ml-2 font-medium text-gray-600
+                    ">Mô tả</p>
+                <input  
+                formControlName="description"
+                  type="text"
+                  name="description"
+                  id="description" placeholder="description" class="border placeholder-gray-400 focus:outline-none
+                    focus:border-black w-full pt-3 pr-4 pb-3 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
+                    border-gray-300 rounded-md"/>
+                    <p class="text-red-500"
+            *ngIf="
+            productForm.get('description')?.hasError('required')&&
+            (productForm.get('description')?.touched || productForm.get('description')?.dirty)
+            "
+            >
+           Vui lòng nhập description sản phẩm
+            </p>
+            <p class="text-red-500"
+            *ngIf="
+            productForm.get('description')?.hasError('minlength')&&
+            (productForm.get('description')?.touched || productForm.get('description')?.dirty)
+            "
+            >
+            Vui lòng nhập description sản phẩm trên 6 ký tự
+            </p>
+              </div>
+              <div className="relative">
+                <label
+                    class="mb-3 block text-base font-medium text-[#07074D]"
+                  >
+                  Chọn xuất xứ
+                  </label>
+                      <select 
+                      
+                formControlName="category"
+                  name="category"
+                  id="category" placeholder="category"
+                      class="border placeholder-gray-400 focus:outline-none
+                      focus:border-black w-full pt-3 pr-4 pb-3 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
+                      border-gray-300 rounded-md"
+                       
+                      >
+                        
+                        <option value="category" *ngFor="let item of categories, index as i"  [value]="item._id">{{item.title}}</option>
+                       
+                      </select>
+                      
+                    </div>
+              <button class="relative py-2" type="submit">
+                <a class="w-full inline-block pt-2 pr-5 pb-2 pl-5 text-xl font-medium text-center text-white bg-indigo-500
+                    rounded-lg transition duration-200 hover:bg-indigo-600 ease">Submit</a>
+              </button>
+            </div>
+          </form>
+          
+        </div>
+        <svg viewbox="0 0 91 91" class="absolute top-0 left-0 z-0 w-32 h-32 -mt-12 -ml-12 text-yellow-300
+            fill-current"><g stroke="none" strokewidth="1" fillrule="evenodd"><g fillrule="nonzero"><g><g><circle
+            cx="3.261" cy="3.445" r="2.72"/><circle cx="15.296" cy="3.445" r="2.719"/><circle cx="27.333" cy="3.445"
+            r="2.72"/><circle cx="39.369" cy="3.445" r="2.72"/><circle cx="51.405" cy="3.445" r="2.72"/><circle cx="63.441"
+            cy="3.445" r="2.72"/><circle cx="75.479" cy="3.445" r="2.72"/><circle cx="87.514" cy="3.445" r="2.719"/></g><g
+            transform="translate(0 12)"><circle cx="3.261" cy="3.525" r="2.72"/><circle cx="15.296" cy="3.525"
+            r="2.719"/><circle cx="27.333" cy="3.525" r="2.72"/><circle cx="39.369" cy="3.525" r="2.72"/><circle
+            cx="51.405" cy="3.525" r="2.72"/><circle cx="63.441" cy="3.525" r="2.72"/><circle cx="75.479" cy="3.525"
+            r="2.72"/><circle cx="87.514" cy="3.525" r="2.719"/></g><g transform="translate(0 24)"><circle cx="3.261"
+            cy="3.605" r="2.72"/><circle cx="15.296" cy="3.605" r="2.719"/><circle cx="27.333" cy="3.605" r="2.72"/><circle
+            cx="39.369" cy="3.605" r="2.72"/><circle cx="51.405" cy="3.605" r="2.72"/><circle cx="63.441" cy="3.605"
+            r="2.72"/><circle cx="75.479" cy="3.605" r="2.72"/><circle cx="87.514" cy="3.605" r="2.719"/></g><g
+            transform="translate(0 36)"><circle cx="3.261" cy="3.686" r="2.72"/><circle cx="15.296" cy="3.686"
+            r="2.719"/><circle cx="27.333" cy="3.686" r="2.72"/><circle cx="39.369" cy="3.686" r="2.72"/><circle
+            cx="51.405" cy="3.686" r="2.72"/><circle cx="63.441" cy="3.686" r="2.72"/><circle cx="75.479" cy="3.686"
+            r="2.72"/><circle cx="87.514" cy="3.686" r="2.719"/></g><g transform="translate(0 49)"><circle cx="3.261"
+            cy="2.767" r="2.72"/><circle cx="15.296" cy="2.767" r="2.719"/><circle cx="27.333" cy="2.767" r="2.72"/><circle
+            cx="39.369" cy="2.767" r="2.72"/><circle cx="51.405" cy="2.767" r="2.72"/><circle cx="63.441" cy="2.767"
+            r="2.72"/><circle cx="75.479" cy="2.767" r="2.72"/><circle cx="87.514" cy="2.767" r="2.719"/></g><g
+            transform="translate(0 61)"><circle cx="3.261" cy="2.846" r="2.72"/><circle cx="15.296" cy="2.846"
+            r="2.719"/><circle cx="27.333" cy="2.846" r="2.72"/><circle cx="39.369" cy="2.846" r="2.72"/><circle
+            cx="51.405" cy="2.846" r="2.72"/><circle cx="63.441" cy="2.846" r="2.72"/><circle cx="75.479" cy="2.846"
+            r="2.72"/><circle cx="87.514" cy="2.846" r="2.719"/></g><g transform="translate(0 73)"><circle cx="3.261"
+            cy="2.926" r="2.72"/><circle cx="15.296" cy="2.926" r="2.719"/><circle cx="27.333" cy="2.926" r="2.72"/><circle
+            cx="39.369" cy="2.926" r="2.72"/><circle cx="51.405" cy="2.926" r="2.72"/><circle cx="63.441" cy="2.926"
+            r="2.72"/><circle cx="75.479" cy="2.926" r="2.72"/><circle cx="87.514" cy="2.926" r="2.719"/></g><g
+            transform="translate(0 85)"><circle cx="3.261" cy="3.006" r="2.72"/><circle cx="15.296" cy="3.006"
+            r="2.719"/><circle cx="27.333" cy="3.006" r="2.72"/><circle cx="39.369" cy="3.006" r="2.72"/><circle
+            cx="51.405" cy="3.006" r="2.72"/><circle cx="63.441" cy="3.006" r="2.72"/><circle cx="75.479" cy="3.006"
+            r="2.72"/><circle cx="87.514" cy="3.006" r="2.719"/></g></g></g></g></svg>
+        <svg viewbox="0 0 91 91" class="absolute bottom-0 right-0 z-0 w-32 h-32 -mb-12 -mr-12 text-indigo-500
+            fill-current"><g stroke="none" strokewidth="1" fillrule="evenodd"><g fillrule="nonzero"><g><g><circle
+            cx="3.261" cy="3.445" r="2.72"/><circle cx="15.296" cy="3.445" r="2.719"/><circle cx="27.333" cy="3.445"
+            r="2.72"/><circle cx="39.369" cy="3.445" r="2.72"/><circle cx="51.405" cy="3.445" r="2.72"/><circle cx="63.441"
+            cy="3.445" r="2.72"/><circle cx="75.479" cy="3.445" r="2.72"/><circle cx="87.514" cy="3.445" r="2.719"/></g><g
+            transform="translate(0 12)"><circle cx="3.261" cy="3.525" r="2.72"/><circle cx="15.296" cy="3.525"
+            r="2.719"/><circle cx="27.333" cy="3.525" r="2.72"/><circle cx="39.369" cy="3.525" r="2.72"/><circle
+            cx="51.405" cy="3.525" r="2.72"/><circle cx="63.441" cy="3.525" r="2.72"/><circle cx="75.479" cy="3.525"
+            r="2.72"/><circle cx="87.514" cy="3.525" r="2.719"/></g><g transform="translate(0 24)"><circle cx="3.261"
+            cy="3.605" r="2.72"/><circle cx="15.296" cy="3.605" r="2.719"/><circle cx="27.333" cy="3.605" r="2.72"/><circle
+            cx="39.369" cy="3.605" r="2.72"/><circle cx="51.405" cy="3.605" r="2.72"/><circle cx="63.441" cy="3.605"
+            r="2.72"/><circle cx="75.479" cy="3.605" r="2.72"/><circle cx="87.514" cy="3.605" r="2.719"/></g><g
+            transform="translate(0 36)"><circle cx="3.261" cy="3.686" r="2.72"/><circle cx="15.296" cy="3.686"
+            r="2.719"/><circle cx="27.333" cy="3.686" r="2.72"/><circle cx="39.369" cy="3.686" r="2.72"/><circle
+            cx="51.405" cy="3.686" r="2.72"/><circle cx="63.441" cy="3.686" r="2.72"/><circle cx="75.479" cy="3.686"
+            r="2.72"/><circle cx="87.514" cy="3.686" r="2.719"/></g><g transform="translate(0 49)"><circle cx="3.261"
+            cy="2.767" r="2.72"/><circle cx="15.296" cy="2.767" r="2.719"/><circle cx="27.333" cy="2.767" r="2.72"/><circle
+            cx="39.369" cy="2.767" r="2.72"/><circle cx="51.405" cy="2.767" r="2.72"/><circle cx="63.441" cy="2.767"
+            r="2.72"/><circle cx="75.479" cy="2.767" r="2.72"/><circle cx="87.514" cy="2.767" r="2.719"/></g><g
+            transform="translate(0 61)"><circle cx="3.261" cy="2.846" r="2.72"/><circle cx="15.296" cy="2.846"
+            r="2.719"/><circle cx="27.333" cy="2.846" r="2.72"/><circle cx="39.369" cy="2.846" r="2.72"/><circle
+            cx="51.405" cy="2.846" r="2.72"/><circle cx="63.441" cy="2.846" r="2.72"/><circle cx="75.479" cy="2.846"
+            r="2.72"/><circle cx="87.514" cy="2.846" r="2.719"/></g><g transform="translate(0 73)"><circle cx="3.261"
+            cy="2.926" r="2.72"/><circle cx="15.296" cy="2.926" r="2.719"/><circle cx="27.333" cy="2.926" r="2.72"/><circle
+            cx="39.369" cy="2.926" r="2.72"/><circle cx="51.405" cy="2.926" r="2.72"/><circle cx="63.441" cy="2.926"
+            r="2.72"/><circle cx="75.479" cy="2.926" r="2.72"/><circle cx="87.514" cy="2.926" r="2.719"/></g><g
+            transform="translate(0 85)"><circle cx="3.261" cy="3.006" r="2.72"/><circle cx="15.296" cy="3.006"
+            r="2.719"/><circle cx="27.333" cy="3.006" r="2.72"/><circle cx="39.369" cy="3.006" r="2.72"/><circle
+            cx="51.405" cy="3.006" r="2.72"/><circle cx="63.441" cy="3.006" r="2.72"/><circle cx="75.479" cy="3.006"
+            r="2.72"/><circle cx="87.514" cy="3.006" r="2.719"/></g></g></g></g></svg>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-lg text-center">
+
+        <img class="w-[500px] mb-[-150px] mt-[-250px] block mx-auto py-5"
+            src="https://res.cloudinary.com/dvnui7zt1/image/upload/v1700195858/z4826778010531_f0e5ca3045549e533b7c17c1e6134635_l6ugym.jpg"
+            alt="">
+        <h1 class="text-2xl font-bold sm:text-3xl">Quên mật khẩu</h1>
+
+        <p class="mt-4 text-gray-500">
+            Vui lòng nhập Email để tiếp tục
+        </p>
+    </div>
+
+    <form action="" class="mx-auto mb-0 mt-8 max-w-md space-y-4" [formGroup]="emailForm" (ngSubmit)="sendEmail()">
+
+        <div class="grid grid-cols-2 gap-4">
+            <label for="email" class="py-3">Email
+                <span class="text-red-600 font-bold">*</span>
+            </label>
+
+            <div class="relative mx-[-90px]">
+                <input id="email" name="email" type="email" formControlName="email"
+                    class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" placeholder="Nhập Email " />
+
+                <div *ngIf="
+                emailForm.get('email')?.hasError('required') &&
+                    (emailForm.get('email')?.touched || emailForm.get('email')?.dirty)" class="text-red-600">
+                    Email không được để trống!</div>
+                <div *ngIf="
+                emailForm.get('email')?.hasError('email') &&
+                    (emailForm.get('email')?.touched || emailForm.get('email')?.dirty)" class="text-red-600">
+                    Email không đúng định dạng!</div>
+            </div>
+
+        </div>
+
+        <div class="flex items-center justify-between">
+            <p class="text-sm text-gray-500 ">
+                Bạn đã có tài khoản?
+                <a class="underline" href="/login">Đăng Nhập</a>
+            </p>
+
+            <button type="submit" class="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white">
+                Gửi Email
+            </button>
+        </div>
+    </form>
+</div>

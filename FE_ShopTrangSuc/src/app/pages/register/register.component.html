@@ -1,0 +1,130 @@
+<div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-lg text-center">
+
+        <img class="w-[150px] block mx-auto py-5" src="https://cdn.pnj.io/images/logo/pnj.com.vn.png" alt="">
+
+        <h1 class="text-2xl font-bold sm:text-3xl">Đăng ký tài khoản</h1>
+
+        <p class="mt-4 text-gray-500">
+            Vui lòng đăng ký để tiếp tục
+        </p>
+    </div>
+
+    <form class="mx-auto mb-0 mt-8 max-w-md space-y-4" [formGroup]="formRegister" (ngSubmit)="onHandleSubmit()">
+        <div class="grid grid-cols-2 gap-4">
+            <label for="email" class="py-3">Họ
+                <span class="text-red-600 font-bold">*</span>
+            </label>
+
+            <div class="relative mx-[-90px]">
+                <input id="firstname" name="firstname" type="text" formControlName="firstname"
+                    class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" placeholder="Nhập Email " />
+
+                <div *ngIf="
+                    formRegister.get('firstname')?.hasError('required') &&
+                    (formRegister.get('firstname')?.touched || formRegister.get('firstname')?.dirty)"
+                    class="text-red-600">
+                    Họ không được để trống!</div>
+            </div>
+
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+            <label for="email" class="py-3">Tên
+                <span class="text-red-600 font-bold">*</span>
+            </label>
+
+            <div class="relative mx-[-90px]">
+                <input type="text" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                    placeholder="Nhập Tên" id="lastname" name="lastname" formControlName="lastname" />
+                <div *ngIf="
+                    formRegister.get('lastname')?.hasError('required') &&
+                    (formRegister.get('lastname')?.touched || formRegister.get('lastname')?.dirty)"
+                    class="text-red-600">
+                    Tên không được để trống!</div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+            <label for="email" class="py-3">Email
+                <span class="text-red-600 font-bold">*</span>
+            </label>
+
+            <div class="relative mx-[-90px]">
+                <input id="email" name="email" type="email" formControlName="email"
+                    class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" placeholder="Nhập Email " />
+
+                <div *ngIf="
+                    formRegister.get('email')?.hasError('required') &&
+                    (formRegister.get('email')?.touched || formRegister.get('email')?.dirty)" class="text-red-600">
+                    Email không được để trống!</div>
+                <div *ngIf="
+                formRegister.get('email')?.hasError('pattern') &&
+                    (formRegister.get('email')?.touched || formRegister.get('email')?.dirty)" class="text-red-600">
+                    Email không đúng định dạng!</div>
+            </div>
+
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+            <label for="phone" class="py-3">Số điện thoại
+                <span class="text-red-600 font-bold">*</span>
+            </label>
+
+            <div class="relative mx-[-90px]">
+                <input type="text" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                    placeholder="Nhập Số điện thoại" id="mobile" name="mobile" formControlName="mobile" />
+                <div *ngIf="
+                    formRegister.get('mobile')?.hasError('required') &&
+                    (formRegister.get('mobile')?.touched || formRegister.get('mobile')?.dirty)" class="text-red-600">
+                    Số điện thoại không được để trống!</div>
+                    <div *ngIf="
+                    formRegister.get('mobile')?.hasError('pattern') &&
+                    (formRegister.get('mobile')?.touched || formRegister.get('mobile')?.dirty)" class="text-red-600">
+                    Số điện thoại không đúng định dạng!</div>
+
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+            <label for="address" class="py-3">Địa chỉ</label>
+
+            <div class="relative mx-[-90px]">
+                <input type="text" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                    placeholder="Nhập Địa chỉ" id="address" name="address" formControlName="address" />
+                    <div *ngIf="
+                    formRegister.get('address')?.hasError('required') &&
+                    (formRegister.get('address')?.touched || formRegister.get('mobile')?.dirty)" class="text-red-600">
+                    Địa Chỉ không được để trống!</div>
+
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+            <label for="password" class="py-3">Mật khẩu
+                <span class="text-red-600 font-bold">*</span>
+            </label>
+
+            <div class="relative mx-[-90px]">
+                <input id="password" name="password" type="password" formControlName="password"
+                    class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" placeholder="Nhập Mật khẩu" />
+
+                <div *ngIf="
+                    formRegister.get('password')?.hasError('required') &&
+                    (formRegister.get('password')?.touched || formRegister.get('password')?.dirty)"
+                    class="text-red-600">
+                    Mật khẩu không được để trống!
+                </div>
+            </div>
+
+        </div>
+
+        <div class="flex items-center justify-between">
+            <p class="text-sm text-gray-500">
+                Bạn đã có tài khoản?
+                <a class="underline" href="/login">Đăng nhập</a>
+            </p>
+
+            <button type="submit" class="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white">
+                Đăng ký
+            </button>
+        </div>
+    </form>
+</div>

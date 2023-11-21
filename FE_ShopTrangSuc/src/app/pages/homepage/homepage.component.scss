@@ -1,0 +1,56 @@
+.image-container {
+    position: relative;
+    width: 250px;
+    height: 200px;
+    margin-top: -30px;
+    margin-left: 18px;
+    margin-bottom: 20px;
+    padding: 10px 0px 0px 0px;
+  }
+  
+  .image-container .hover-image {
+    display: none;
+    position: absolute;
+  }
+  
+  .image-container:hover .original-image {
+    display: none;
+  }
+  
+  .image-container:hover .hover-image {
+    display: block;
+  }
+  // .image-container {
+  //   width: 200px;
+  //   height: 200px;
+  //   background-size: cover;
+  //   transition: background-image 0.3s;
+  // }
+  
+  // .image-container:hover {
+  //   filter: brightness(100%);
+  //   /* Điều chỉnh các hiệu ứng CSS khi hover */
+  // }
+  
+  .slideshow {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
+  
+  .slide {
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .slide.active {
+    display:block;
+  }
+  

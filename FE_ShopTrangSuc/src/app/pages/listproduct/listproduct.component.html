@@ -1,0 +1,212 @@
+<!-- slideshow -->
+<div class="slideshow">
+    <div class="slide" *ngFor="let image of images; let i = index" [ngClass]="{'active': i === currentIndex}">
+      <img class="" [src]="image" alt="Slide">
+
+    </div>
+
+  </div>
+ <div class="flex justify-between mx-4">
+    <button class="font-bold text-3xl  " (click)="prevSlide()"></button>
+    <button class="font-bold text-3xl -mt-[50px]" (click)="nextSlide()">➤</button>
+
+ </div>
+<div class="grid grid-cols-2 gap-4">
+
+    <!-- bộ lọc -->
+    <div class="mb-[15px] bg-gradient-to-r  from-indigo-700 ... w-[300px] py-[30px]">
+        <div class="flex">
+            <input [(ngModel)]="searchTerm"  class="w-[230px]  px-2 py-2 rounded-xl ml-3 mb-10 " type="text" placeholder="Tìm kiếm nhanh">
+            <img (click)="search()" class="-ml-[30px] mb-10" src="https://cdn.pnj.io/images/image-update/layout/mobile/find-icon.svg" alt="">
+        </div>
+        <div class="w-full text-white -ml-[30px] ">
+            <div class="flex items-center  " (click)="toggleForm()">
+                <button
+                class=" w-full h-[50px] ml-5  hover: from-indigo-700 ... hover:bg-gradient-to-r font-medium"
+                [ngClass]="{'from-indigo-700 ... bg-gradient-to-r': showForm}">Bộ lọc sản phẩm</button>
+                <svg *ngIf="!showForm" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-500 font-bold">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                  <svg  *ngIf="showForm" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-500 font-bold">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+
+            </div>
+            <div *ngIf="showForm" class="">
+                <button (click)="toggleSortByPrice()" class="w-full hover:border-green-500  px-12 py-2
+          hover: from-indigo-700 ... hover:bg-gradient-to-r "
+          >Giá từ thấp đến cao </button><br>
+
+
+                <button (click)="toggleSortByPriceS()"
+                    class="w-full hover:border-green-500   px-12 py-2 pr-10  hover: from-indigo-700 ... hover:bg-gradient-to-r pr-10  hover: from-indigo-700 ... hover:bg-gradient-to-r">Giá
+                    từ cao đến thấp</button><br>
+                <button (click)="filterProductsByassess()"
+                    class="w-full  px-12 py-2 hover:border-green-500 pr-10  hover: from-indigo-700 ... hover:bg-gradient-to-r pr-10  hover: from-indigo-700 ... hover:bg-gradient-to-r">Đánh
+                    giá cao</button><br>
+                <button (click)="filterProductsBySold()"
+                    class="w-full px-12 py-2 hover:border-green-500 pr-10  hover: from-indigo-700 ... hover:bg-gradient-to-r pr-10  hover: from-indigo-700 ... hover:bg-gradient-to-r">Bán
+                    chạy</button><br>
+            </div>
+        </div>
+        <div class="w-full text-white -ml-[30px]">
+            <div class="flex items-center" (click)="toggleForms()">
+                <button
+                class=" w-full h-[50px] ml-5  hover:from-indigo-700 ... hover:bg-gradient-to-r font-medium"
+                [ngClass]="{'from-indigo-700 ... bg-gradient-to-r': showForms}">Trang sức</button>
+                <svg *ngIf="!showForms" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-500 font-bold">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                  <svg  *ngIf="showForms" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-500 font-bold">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+
+            </div>
+            <div *ngIf="showForms" class="">
+
+                <button (click)="toggleSortByPriceS()"
+                    class="w-full hover:border-green-500  px-12 py-2 pr-10  hover: from-indigo-700 ... hover:bg-gradient-to-r pr-10  hover: from-indigo-700 ... hover:bg-gradient-to-r">Nhẫn</button><br>
+                <button (click)="filterProductsByassess()"
+                    class="w-full  px-12 py-2 hover:border-green-500 pr-10  hover: from-indigo-700 ... hover:bg-gradient-to-r pr-10  hover: from-indigo-700 ... hover:bg-gradient-to-r">Vòng</button><br>
+                <button (click)="filterProductsBySold()"
+                    class="w-full px-12 py-2 hover:border-green-500 pr-10  hover: from-indigo-700 ... hover:bg-gradient-to-r pr-10  hover: from-indigo-700 ... hover:bg-gradient-to-r">Dây chuyền</button><br>
+                    <button (click)="toggleSortByPrice()" class="w-full hover:border-green-500  px-12 py-2
+          hover: from-indigo-700 ... hover:bg-gradient-to-r ">Bông tai</button><br>
+            </div>
+        </div>
+        <div class="w-full text-white -ml-[30px]">
+            <div class="flex items-center" (click)="toggleFormss()">
+                <button
+                class=" w-full h-[50px] ml-5  hover:from-indigo-700 ... hover:bg-gradient-to-r font-medium"
+                [ngClass]="{'from-indigo-700 ... bg-gradient-to-r': showForms}">Thương hiệu</button>
+                <svg *ngIf="!showFormss" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-500 font-bold">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                  <svg  *ngIf="showFormss" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-500 font-bold">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+
+            </div>
+            <div *ngIf="showFormss" class="">
+
+                <button (click)="filterProductsByBrandPNJ()"
+                    class="w-full hover:border-green-500  px-12 py-2 pr-10  hover: from-indigo-700 ... hover:bg-gradient-to-r pr-10  hover: from-indigo-700 ... hover:bg-gradient-to-r">PNJ</button><br>
+                <button (click)="filterProductsByBrandNRO()"
+                    class="w-full  px-12 py-2 hover:border-green-500 pr-10  hover: from-indigo-700 ... hover:bg-gradient-to-r pr-10  hover: from-indigo-700 ... hover:bg-gradient-to-r">NRO</button><br>
+                <button (click)="filterProductsByBrandTTL()"
+                    class="w-full px-12 py-2 hover:border-green-500 pr-10  hover: from-indigo-700 ... hover:bg-gradient-to-r pr-10  hover: from-indigo-700 ... hover:bg-gradient-to-r">TTL</button><br>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="-ml-[500px]">
+        <div class="mx-[15px] my-16">
+            <div *ngIf="products.length > 0" class="grid grid-cols-4 gap-10 ml-10">
+                <!-- san pham 1 -->
+                <div *ngFor="let product of products" class="mt-5">
+                  <a href="/product/{{product._id}}"><div class="text-center w-[265px] bg-gray-100 rounded-xl pb-3 position-relative product-container">
+                         <!-- Nút mua hàng -->
+                         <button class="buy-button" *ngIf="product.quantity > 0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-heart ml-9 hover:bg-black" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
+                              </svg>
+                        </button>
+                         <button class="buy-buttons" *ngIf="product.quantity > 0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4 ml-9" viewBox="0 0 16 16">
+                                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                              </svg>
+                        </button>
+                        <p class="border bg-red-500 w-[100px] text-white font-medium py-1 absolute mt-10" *ngIf="product.quantity === 0">Hết hàng</p>
+                        <div class="image-container">
+                            <img src={{product.images[0]}} class="original-image w-[250px]" />
+                            <img src={{product.images[1]}} alt="Ảnh thay thế" class="hover-image w-[250px]" />
+                        </div>
+
+                        <img class="w-10 absolute -mt-14 ml-4 mb-4"
+                            src="https://cdn.pnj.io/images/image-update/tag-product/icon-tragop-2.svg" alt="">
+                        <p class="text-[13px]">{{product.title}}</p>
+                        <div class="flex justify-center space-x-6">
+                            <p class="text-amber-600 font-medium my-2">{{product.price}}</p>
+                            <p class="text-gray-400 font-medium my-2 line-through">{{product.priceroot}}</p>
+                        </div>
+                        <div class="flex justify-between mx-3 my-2">
+                            <p>5⭐️({{product.assess}})</p>
+                            <p>{{product.sold}}+ đã bán</p>
+                        </div>
+
+
+                    </div></a>
+                </div>
+
+                <!-- <div *ngFor="let product of products" class="mt-5">
+                    <div class="text-center w-[265px] bg-gray-100 rounded-xl pb-3">
+                        <p class="border bg-red-500 w-[100px] text-white font-medium py-1 absolute mt-10" *ngIf="product.quantity === 0 " >Hết hàng</p>
+                        <div class="image-container">
+                            <img src={{product.images[0]}} class="original-image w-[250px]" />
+                            <img src={{product.images[1]}} alt="Ảnh thay thế" class="hover-image w-[250px]" />
+                        </div>
+
+                        <img class="w-10 absolute -mt-14 ml-4 mb-4"
+                            src="https://cdn.pnj.io/images/image-update/tag-product/icon-tragop-2.svg" alt="">
+                        <p class=" text-[13px]">{{product.title}}</p>
+                        <div class="flex justify-center space-x-6">
+                            <p class="text-amber-600 font-medium my-2">{{product.price}}</p>
+                            <p class="text-gray-400 font-medium my-2 line-through">{{product.priceroot}}</p>
+                        </div>
+                        <div class="flex justify-between mx-3 my-2">
+                            <p>5⭐️({{product.assess}})</p>
+                            <p>{{product.sold}}+ đã bán</p>
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+
+        </div>
+        <div class="flex justify-center my-6">
+            <nav aria-label="Page navigation example">
+                <div
+                    class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+                    <nav>
+                        <ul class="flex">
+                            <li>
+                                <button (click)="previousPage()" [disabled]="page === 1"
+                                    class="mx-1 flex h-9 w-9 items-center justify-center rounded-full border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300"
+                                    href="#" aria-label="Previous">
+                                    <span class="material-icons text-sm">keyboard_arrow_left</span>
+                                </button>
+                            </li>
+                            <li>
+                                <a class="mx-1 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-tr from-pink-600 to-pink-400 p-0 text-sm text-white shadow-md shadow-pink-500/20 transition duration-150 ease-in-out"
+                                    href="#">{{page}}</a>
+                            </li>
+                            <li>
+                                <button (click)="nextPage()" [disabled]="products.length < limit"
+                                    class="mx-1 flex h-9 w-9 items-center justify-center rounded-full border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300"
+                                    href="#" aria-label="Next">
+                                    <span class="material-icons text-sm">keyboard_arrow_right</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+                <!-- <ul class="flex list-style-none">
+                <div>
+                    <button (click)="previousPage()" [disabled]="page === 1">Trang trước</button>
+                    <span>{{ page }}</span>
+                    <button (click)="nextPage()" [disabled]="products.length < limit">Trang sau</button>
+                </div>
+            </ul> -->
+            </nav>
+        </div>
+        <!-- <div
+      [ngStyle]="{ 'background-image': hover ? 'url(https://cdn.pnj.io/images/thumbnails/300/300/detailed/134/gnxmxmw000205-nhan-vang-trang-10k-dinh-da-ecz-pnj-1.png)' : 'url(https://cdn.pnj.io/images/thumbnails/485/485/detailed/134/gnxmxmw000205-nhan-vang-trang-10k-dinh-da-ecz-pnj-3.png)' }"
+      (mouseenter)="hover = true"
+      (mouseleave)="hover = false"
+      class="image-container"
+    ></div> -->
+    </div>
+
+</div>

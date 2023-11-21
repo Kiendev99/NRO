@@ -1,0 +1,89 @@
+.image-container {
+  position: relative;
+  width: 250px;
+  height: 200px;
+  margin-top: -30px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  padding: 10px 0px 0px 0px;
+}
+
+.image-container .hover-image {
+  display: none;
+  position: absolute;
+}
+
+.image-container:hover .original-image {
+  display: none;
+}
+
+.image-container:hover .hover-image {
+  display: block;
+}
+
+// show
+
+.slideshow {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide.active {
+  display:block;
+}
+
+/* CSS */
+.product-container {
+  position: relative;
+}
+
+.buy-button {
+  position: absolute;
+  top: 15px;
+  margin-left: 52px;
+  transform: translate(-50%, -50%);
+  display: none; /* Ẩn nút ban đầu */
+  // padding: 5px 20px;
+  width: 100px;
+  padding: 6px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.buy-buttons {
+  position: absolute;
+  top: 15px;
+  left: 70%;
+  margin-left: 30px;
+  transform: translate(-50%, -50%);
+  display: none; /* Ẩn nút ban đầu */
+  width: 100px;
+  padding: 6px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.product-container:hover .buy-button {
+  display: block;
+}
+
+.product-container:hover .buy-buttons {
+  display: block;
+}
+

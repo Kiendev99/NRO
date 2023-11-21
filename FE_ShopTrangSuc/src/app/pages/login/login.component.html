@@ -1,0 +1,76 @@
+<div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-lg text-center">
+
+        <img class="w-[500px] mb-[-150px] mt-[-250px] block mx-auto py-5"
+            src="https://res.cloudinary.com/dvnui7zt1/image/upload/v1700195858/z4826778010531_f0e5ca3045549e533b7c17c1e6134635_l6ugym.jpg"
+            alt="">
+
+        <h1 class="text-2xl font-bold sm:text-3xl">Đăng nhập tài khoản</h1>
+
+        <p class="mt-4 text-gray-500">
+            Vui lòng đăng nhập để tiếp tục
+        </p>
+    </div>
+
+    <form action="" class="mx-auto mb-0 mt-8 max-w-md space-y-4" [formGroup]="formLogin" (ngSubmit)="onHandleSubmit()">
+
+        <div class="grid grid-cols-2 gap-4">
+            <label for="email" class="py-3">Email
+                <span class="text-red-600 font-bold">*</span>
+            </label>
+
+            <div class="relative mx-[-90px]">
+                <input id="email" name="email" type="email" formControlName="email"
+                    class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" placeholder="Nhập Email " />
+
+                <div *ngIf="
+                    formLogin.get('email')?.hasError('required') &&
+                    (formLogin.get('email')?.touched || formLogin.get('email')?.dirty)" class="text-red-600">
+                    Email không được để trống!</div>
+                <div *ngIf="
+                    formLogin.get('email')?.hasError('email') &&
+                    (formLogin.get('email')?.touched || formLogin.get('email')?.dirty)" class="text-red-600">
+                    Email không đúng định dạng!</div>
+            </div>
+
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+            <label for="password" class="py-3">Mật khẩu
+                <span class="text-red-600 font-bold">*</span>
+            </label>
+
+            <div class="relative mx-[-90px]">
+                <input id="password" name="password" type="password" formControlName="password"
+                    class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" placeholder="Nhập Mật khẩu" />
+
+                <div *ngIf="
+                    formLogin.get('password')?.hasError('required') &&
+                    (formLogin.get('password')?.touched || formLogin.get('password')?.dirty)" class="text-red-600">
+                    Mật khẩu không được để trống!
+                </div>
+            </div>
+
+        </div>
+        <div class="">
+
+
+        </div>
+
+        <div class="flex items-center justify-between">
+            <div>
+                <p class="text-sm text-gray-500 ">
+                    Bạn đã có tài khoản?
+                    <a class="underline" href="/register">Đăng Ký</a>
+                </p>
+                <p class="text-sm text-gray-500 ">
+                    <a class="underline" href="/forgotPassword">Quên mật khẩu</a>
+                </p>
+            </div>
+
+            <button type="submit" class="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white">
+                Đăng nhập
+            </button>
+        </div>
+    </form>
+</div>

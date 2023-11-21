@@ -1,0 +1,25 @@
+.phutter{
+    position: fixed;
+    width: 100%;
+    bottom: -20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.5s; 
+}
+.message-text-title {
+    color: #00ca8d;
+    line-height: 1.25;
+    font-size: .9375rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    margin-right: 8px;
+}
+.message-text-sub {
+    color: #fff;
+    line-height: 1.25;
+    font-size: .8125rem;
+    margin-bottom: 0;
+}
+
